@@ -1,0 +1,206 @@
+/* Basic Styles */
+body {
+  font-family: 'Times New Roman', serif;
+  background-color: #E0D2BD; /* Background color */
+  color: #00231C; /* Font color */
+  margin: 0;
+  padding: 0;
+  text-align: center; /* Center the text for the entire page */
+}
+
+/* Header Styling */
+header {
+  display: flex;
+  justify-content: space-between; /* Space between logo and navigation */
+  align-items: center;
+  background-color: #790D1D;
+  padding: 10px;
+}
+
+header #logo {
+  max-width: 150px; /* Adjust this as needed for logo size */
+}
+
+header h1 {
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  color: #00231C;
+  margin-left: 20px;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  color: #00231C;
+  text-decoration: none;
+  font-family: 'Arial', sans-serif;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #9D352E; /* Hover effect for links */
+}
+
+/* Section Styling */
+section {
+  padding: 20px;
+  margin: 20px;
+  background-color: #79512E; /* Background color for section */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center all content */
+  justify-content: center; /* Center vertically */
+}
+
+h2, h3 {
+  color: #9D352E; /* Font color for headings */
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #790D1D; /* Footer background color */
+  color: #FFFFFF;
+  padding: 20px;
+  text-align: center;
+}
+
+footer h4 {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+footer a {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #9D352E; /* Hover effect for footer links */
+}
+
+/* Subscribe Form Styling */
+#subscribe-form {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#subscribe-form input {
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+#subscribe-form button {
+  padding: 10px;
+  background-color: #9D352E; /* Button background */
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#subscribe-form button:hover {
+  background-color: #79512E; /* Hover effect */
+}
+
+/* Hero Image Section */
+.hero-image {
+  width: 100%; /* Full width */
+  height: 400px; /* Adjust the height as needed */
+  background-color: #ddd; /* Fallback background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures the image covers the section */
+}
+
+/* Feedback Form Styling */
+#feedback-form {
+  display: flex;
+  flex-direction: column; /* Stack the form elements vertically */
+  align-items: center; /* Center the form elements horizontally */
+  max-width: 600px; /* Limit the width of the form */
+  margin: 0 auto; /* Center the form on the page */
+}
+
+#feedback-form label {
+  margin-bottom: 8px; /* Add space between label and input */
+  font-weight: bold;
+}
+
+#feedback-form input,
+#feedback-form textarea {
+  width: 100%; /* Make the inputs and textarea fill the container */
+  padding: 10px;
+  margin-bottom: 15px; /* Add space between the form elements */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#feedback-form button {
+  padding: 10px 20px;
+  background-color: #9D352E; /* Customize the button color */
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#feedback-form button:hover {
+  background-color: #79512E; /* Button hover effect */
+}
+
+/* Product Table Styling */
+table {
+  width: 80%; /* Adjust width as necessary */
+  margin: 0 auto; /* Center the table */
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+table img {
+  width: 100px; /* Adjust image size as needed */
+  height: 100px;
+  object-fit: cover;
+  margin: 0 auto; /* Center the images in the table */
+}
+
+/* Add to Cart Button Styling */
+.add-to-cart {
+  background-color: #9D352E; /* Button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px auto; /* Center the button */
+  display: block;
+}
+
+.add-to-cart:hover {
+  background-color: #79512E; /* Hover effect */
+}

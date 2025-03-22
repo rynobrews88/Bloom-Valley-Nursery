@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Bloom Valley Nursery</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header with logo, webpage title, and navigation bar -->
+    <header>
+        <img src="image/client-logo.png" alt="Bloom Valley Nursery Logo" id="logo">
+        <h1>Bloom Valley Nursery</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about-contact.html">About Us / Contact</a></li>
+                <li><a href="customer.html">Customer Page</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Gallery Section with Products -->
+    <section>
+        <h2>Our Products</h2>
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Add to Cart</th>
+            </tr>
+            <tr>
+                <td><img src="image/product1.png" alt="Plant 1"></td>
+                <td>Beautiful Apple Tree.</td>
+                <td>$15.99</td>
+                <td><button class="add-to-cart" data-item="plant1" data-price="15.99">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td><img src="image/product4.png" alt="Plant 2"></td>
+                <td>Aloe plant, perfect for your indoor garden.</td>
+                <td>$25.99</td>
+                <td><button class="add-to-cart" data-item="plant2" data-price="25.99">Add to Cart</button></td>
+            </tr>
+            <!-- More products here -->
+        </table>
+
+        <button id="view-cart">View Cart</button>
+    </section>
+
+    <!-- Footer -->
+<footer>
+<!-- Subscribe form here -->
+<p>Enter your email here to get updates and newsletters</p>
+<form id="subscribe-form">
+  <input type="email" placeholder="Enter your email" required>
+  <button type="submit">Subscribe</button>
+</form>
+</footer>
+
+<!-- JavaScript at the bottom of the page -->
+<script>
+document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the form from submitting
+  alert('Thank you for subscribing.');
+});
+
+    <!-- Modal for View Cart -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-contents"></div>
+            <button id="clear-cart-modal">Clear Cart</button>
+            <button id="process-order-modal">Process Order</button>
+        </div>
+    </div>
+  
+    <!-- JavaScript for sessionStorage and cart functionality -->
+    <script>
+        // Initialize the cart in sessionStorage if it's not already initialized
+        if (!sessionStorage.getItem('cart')) {
+            sessionStorage.setItem('cart', JSON.stringify([]));
+        }
+
+        // Function to update the cart in sessionStorage
+        function updateCart(cart) {
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // Add to Cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const item = this.getAttribute('data-item');
+                const price = this.getAttribute('data-price');
+                
+                // Retrieve the cart from sessionStorage
+                let cart = JSON.parse(sessionStorage.getItem('cart'));
+                
+                // Add the item to the cart
+                cart.push({ item: item, price: price });
+                
+                // Update the cart in sessionStorage
+                updateCart(cart);
+                
+                // Display alert when item is added
+                alert('Item added to the cart');
+            });
+        });
+
+        // Function to open the modal
+        function openModal() {
+            document.getElementById('cart-modal').style.display = "block";
+            displayCart(); // Display the cart contents when the modal opens
+        }
+
+        // Function to close the modal
+        document.getElementById('close-modal').addEventListener('click', function() {
+            document.getElementById('cart-modal').style.display = "none";
+        });
+
+        // Function to display the cart items in the modal
+        function displayCart() {
+            const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+            const cartContents = document.getElementById('cart-contents');
+            
+            // Clear any previous cart content
+            cartContents.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartContents.innerHTML = '<p>Your cart is empty.</p>';
+            } else {
+                // Display each item in the cart
+                cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+                    cartItem.innerHTML = `<p>Item: ${item.item}, Price: $${item.price}</p>`;
+                    cartContents.appendChild(cartItem);
+                });
+            }
+        }
+
+        // View Cart functionality (open the modal)
+        document.getElementById('view-cart').addEventListener('click', openModal);
+
+        // Clear Cart functionality in the modal
+        document.getElementById('clear-cart-modal').addEventListener('click', function() {
+            sessionStorage.setItem('cart', JSON.stringify([])); // Clear cart in sessionStorage
+            displayCart(); // Refresh the modal display
+            alert('Cart has been cleared.');
+        });
+
+        // Process Order functionality in the modal
+        document.getElementById('process-order-modal').addEventListener('click', function() {
+            const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+            
+            if (cart.length === 0) {
+                alert('Your cart is empty. Cannot process order.');
+            } else {
+                alert('Thank you for your order.');
+                sessionStorage.setItem('cart', JSON.stringify([])); // Clear cart after processing order
+                displayCart(); // Refresh the modal display
+            }
+        });
+    </script>
+</body>
+</html>

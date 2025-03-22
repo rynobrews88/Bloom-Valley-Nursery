@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Bloom Valley Nursery</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+<img src="image/client-logo.png" alt="Bloom Valley Nursery Logo" id="logo">
+  <h1>Bloom Valley Nursery</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about-contact.html">About Us / Contact</a></li>
+      <li><a href="customer.html">Customer Page</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Image Section -->
+<div class="hero-image">
+<img src="image/hero-image.png" alt="Hero Image">
+</div>
+
+<!-- Welcome Section -->
+<section class="welcome">
+  <h2>Welcome to Bloom Valley Nursery!</h2> <!-- Welcome Text Above Main Content -->
+  <p>Your trusted local nursery offering high-quality plants, trees, and gardening supplies. We focus on sustainability and creativity in everything we do!</p>
+</section>
+
+<!-- Main content sections -->
+<section>
+<h3>Highlights</h3>
+<p>Explore our wide selection of plants, gardening tools, and more!</p>
+
+<!-- Add the images here -->
+<div class="highlight-images">
+  <img src="image/product8.png" alt="Highlight 1">
+  <img src="image/product7.png" alt="Highlight 2">
+  <img src="image/product9.png" alt="Highlight 3">
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<!-- Subscribe form here -->
+<p>Enter your email here to get updates and newsletters</p>
+<form id="subscribe-form">
+  <input type="email" placeholder="Enter your email" required>
+  <button type="submit">Subscribe</button>
+</form>
+</footer>
+
+<!-- JavaScript at the bottom of the page -->
+<script>
+document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the form from submitting
+  alert('Thank you for subscribing.');
+});
+</script>
+</body>
+</html>

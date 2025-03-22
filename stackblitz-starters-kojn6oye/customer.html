@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Page - Bloom Valley Nursery</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header with logo, webpage title, and navigation bar -->
+    <header>
+    <img src="image/client-logo.png" alt="Bloom Valley Nursery Logo" id="logo">
+        <h1>Bloom Valley Nursery</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about-contact.html">About Us / Contact</a></li>
+                <li><a href="customer.html">Customer Page</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Customer Testimonials Section -->
+    <section>
+        <h2>What Our Customers Say</h2>
+        <p>"I love the plants I purchased from Bloom Valley! They have a beautiful selection and helpful staff!" – Sarah, Local Gardener</p>
+        <p>"The best nursery in town! Their plants have transformed my garden!" – Mark, Homeowner</p>
+    </section>
+
+    <!-- Footer -->
+<footer>
+<!-- Subscribe form here -->
+<p>Enter your email here to get updates and newsletters</p>
+<form id="subscribe-form">
+  <input type="email" placeholder="Enter your email" required>
+  <button type="submit">Subscribe</button>
+</form>
+</footer>
+
+<!-- JavaScript at the bottom of the page -->
+<script>
+document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the form from submitting
+  alert('Thank you for subscribing.');
+});
+  
+  <!-- JavaScript at the bottom of the page -->
+  <script>
+    document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting
+      alert('Thank you for subscribing.');
+    });
+  </script>
+  </body>
+  </html>
